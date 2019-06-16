@@ -1,0 +1,20 @@
+{
+    "name": "qlixes/ppob_bridge",
+    "description": "Indonesia PPOB Collection on 1 services access",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bryan Chan",
+            "email": "qlixess@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "qlixes\\Bridger\\":"src/"
+        }
+    }
+}
