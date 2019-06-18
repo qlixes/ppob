@@ -14,4 +14,7 @@ interface IVendor
 	// cara bayar
 	function bayarPascabayar($params = []);
 	function bayarPrabayar($params = []);
+
+	// function responseBayarPrabayar();
+	// function repsonseBayarPascabayar();
 }

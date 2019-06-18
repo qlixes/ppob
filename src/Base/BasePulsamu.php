@@ -87,4 +87,13 @@ class BasePulsamu extends BaseHelper implements IVendor
 
         return $this->parseResponseToArray($response);
 	}
+
+	// function responseBayarPrabayar()
+	// {
+	// }
+
+	// function responseBayarPascabayar()
+	// {
+
+	// }
 }
