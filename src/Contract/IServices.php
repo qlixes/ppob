@@ -1,5 +1,7 @@
 <?php
 
+namespace qlixes\Bridger\Contract;
+
 interface IServices
 {
 	// output list per service
@@ -8,11 +10,10 @@ interface IServices
 	function getPascabayarPulsa($number);
 
 	// purchase order
-	function postPrabayarPulsa();
-	function postPrabayarData();
+	function postPascabayar($params = []);
+	function postPrabayar($params = []);
 
-	function getPrabayarPln();
-	function postPrabayarPln();
+	function getPrabayarPln($params = []);
 
 	function getPascabayarPln($number);
 
@@ -28,23 +29,14 @@ interface IServices
 	function getPascabayarCentrinet($number);
 
 	function getPrabayarWifiid();
-	function postPrabayarWifiid();
 
 	function getPrabayarMobileLegends();
 	function getPrabayarMegaxus();
-	function getPrabayarLytho();
+	function getPrabayarLyto();
 	function getPrabayarItunes();
 	function getPrabayarGooglePlay();
 	function getPrabayarGemsCool();
 	function getPrabayarGarena(); 
-
-	function postPrabayarMobileLegends();
-	function postPrabayarMegaxus();
-	function postPrabayarLytho();
-	function postPrabayarItunes();
-	function postPrabayarGooglePlay();
-	function postPrabayarGemsCool();
-	function postPrabayarGarena();
 
 	function getPascabayarWom($number);
 	function getPascabayarBussan($number);
@@ -55,7 +47,7 @@ interface IServices
 	function getPascabayarSmart($number);
 	function getPascabayarAdira($number);
 	function getPascabayarFif($number);
-	function getPascabayarAnz($number);
+	function getPascabayarAnzFinance($number);
 	function getPascabayarKtaPermata($number);
 	function getPascabayarCitibankCash($number);
 	function getPascabayarCitibankPay($number);
@@ -71,4 +63,14 @@ interface IServices
 	function getPascabayarBumiputra($number);
 	function getPascabayarCitibank($number);
 	function getPascabayarDigibank($number);
+
+	function getPrabayarEmoney($number);
+	function getPrabayarEcash($number);
+	function getPrabayarOvo($number);
+	function getPrabayarGopay($number);
+	function getPrabayarDana($number);
+	function getPrabayarMtix($number);
+	function getPrabayarTixid($number);
+	function getPrabayarTcash($number);
+	function getPrabayarTapcash($number);
 }

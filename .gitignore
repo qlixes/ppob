@@ -1,3 +1,3 @@
 vendor/
 composer.lock
-src/Config/auth.php
+src/Config/
