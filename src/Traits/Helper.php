@@ -88,9 +88,9 @@ trait Helper
 
     		foreach($limit as $prices)
     		{
-          if($group == $prices)
-            $parse[$prices][$price][] = ['harga' => $price,'item_id' => $item_id,'nama_item' => $label];
-    			continue;
+                if($group == $prices)
+                    $parse[$prices][$price][] = ['harga' => $price,'item_id' => $item_id,'nama_item' => $label];
+                continue;
     		}
     	}
 
@@ -102,5 +102,46 @@ trait Helper
       }
 
     	return $parser;
+    }
+
+    function filterPulsamuPrabayarData($data = [], $range = [])
+    {}
+
+    function filterMobilepulsaPrabayarData($data = [], $range = [])
+    {
+      $parser = [];
+      sort($range); //make sure all sort asc
+      // get start range and end range
+      $first = reset($range);
+      $last = end($range);
+
+      foreach($data as $key => $value)
+      {
+        $price = $value['pulsa_price'];
+        if(($last > $price) && ($price > $first))
+          $parser[$price] = [
+            'item_code' => $value['pulsa_code'], 'item_label' => $value['pulsa_nominal'], 'item_price' => $value['pulsa_price']
+          ];
+      }
+      ksort($parser);
+      return $parser;
+    }
+
+    function filterPulsamuPrabayarData($data = [], $range = [])
+    {
+      $parser = [];
+      sort($range);
+      $first = reset($range);
+      $last = end($range);
+      foreach($data as $key => $value)
+      {
+        list($item_id, $item_price, $item_label, $item_group) = $value;
+        if(($last > $item_price) && ($item_price > $first))
+          $parser[$item_price] = [
+            'item_code' => $item_id, 'item_label' => $item_label, 'item_price' => $item_price
+          ];
+      }
+      ksort($parser);
+      return $parser;
     }
 }

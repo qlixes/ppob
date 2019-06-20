@@ -61,6 +61,7 @@ class Bridge
 		'telkomvision'	=> 'Telkom Vision',
 		'bigtv'			=> 'Big TV',
 		'nexmedia'		=> 'Nexmedia TV',
+		'speedy'		=> 'Telkom Speedy',
 
 		'zynga'			=> '',
 		'winner'		=> '',
@@ -175,7 +176,7 @@ class Bridge
 
 	function getPrabayarPln($params = [])
 	{
-		$vendor = config('bridger.pulsa_pra.' . $provider);
+		$vendor = config('bridger.pln_pra');
 
 		$data = [];
 		$data['output'] = $this->{$vendor}->getPrabayarPln($params);
@@ -186,7 +187,7 @@ class Bridge
 
 	function getPascabayarPln($number)
 	{
-		$vendor = config('bridger.pln.' . $provider);
+		$vendor = config('bridger.pln_pasca');
 
 		$data = [];
 		$data['output'] = $this->{$vendor}->getPascabayarPln($number);
@@ -195,108 +196,812 @@ class Bridge
 		return $data;
 	}
 
-	function getPascabayarPgn($number);
-	function getPascabayarTelkom($number);
-	function getPascabayarIndihome($number);
-	function getPascabayarSpeedy($number);
-	function getPascabayarFirstmedia($number);
-	function getPascabayarOkevision($number);
-	function getPascabayarCbn($number);
-	function getPascabayarCentrinet($number);
-	function getPrabayarWifiid();
-	function getPrabayarMobileLegends();
-	function getPrabayarMegaxus();
-	function getPrabayarLyto();
-	function getPrabayarItunes();
-	function getPrabayarGooglePlay();
-	function getPrabayarGemsCool();
-	function getPrabayarGarena(); 
-	function getPascabayarWom($number);
-	function getPascabayarBussan($number);
-	function getPascabayarMegaAuto($number);
-	function getPascabayarMegaCentral($number);
-	function getPascabayarColumbia($number);
-	function getPascabayarWoka($number);
-	function getPascabayarSmart($number);
-	function getPascabayarAdira($number);
-	function getPascabayarFif($number);
-	function getPascabayarAnzFinance($number);
-	function getPascabayarKtaPermata($number);
-	function getPascabayarCitibankCash($number);
-	function getPascabayarCitibankPay($number);
-	function getPascabayarAmericaExpress($number);
-	function getPascabayarBni($number);
-	function getPascabayarUob($number);
-	function getPascabayarAnz($number);
-	function getPascabayarPermata($number);
-	function getPascabayarDanamon($number);
-	function getPascabayarPanin($number);
-	function getPascabayarBukopin($number);
-	function getPascabayarBumiputra($number);
-	function getPascabayarCitibank($number);
-	function getPascabayarDigibank($number);
-	function getPrabayarEmoney($number);
-	function getPrabayarEcash($number);
-	function getPrabayarOvo($number);
-	function getPrabayarGopay($number);
-	function getPrabayarDana($number);
-	function getPrabayarMtix($number);
-	function getPrabayarTixid($number);
-	function getPrabayarTcash($number);
-	function getPrabayarTapcash($number);
+	function getPascabayarPgn($number)
+	{
+		$vendor = config('bridger.pgn');
 
-	function postPrabayarPulsa($number);
-	function postPrabayarData($number);
-	function postPascabayarPulsa($number);
-	function postPrabayarPln($params = []);
-	function postPascabayarPln($number);
-	function postPascabayarPgn($number);
-	function postPascabayarTelkom($number);
-	function postPascabayarIndihome($number);
-	function postPascabayarSpeedy($number);
-	function postPascabayarFirstmedia($number);
-	function postPascabayarOkevision($number);
-	function postPascabayarCbn($number);
-	function postPascabayarCentrinet($number);
-	function postPrabayarWifiid();
-	function postPrabayarMobileLegends();
-	function postPrabayarMegaxus();
-	function postPrabayarLyto();
-	function postPrabayarItunes();
-	function postPrabayarGooglePlay();
-	function postPrabayarGemsCool();
-	function postPrabayarGarena(); 
-	function postPascabayarWom($number);
-	function postPascabayarBussan($number);
-	function postPascabayarMegaAuto($number);
-	function postPascabayarMegaCentral($number);
-	function postPascabayarColumbia($number);
-	function postPascabayarWoka($number);
-	function postPascabayarSmart($number);
-	function postPascabayarAdira($number);
-	function postPascabayarFif($number);
-	function postPascabayarAnzFinance($number);
-	function postPascabayarKtaPermata($number);
-	function postPascabayarCitibankCash($number);
-	function postPascabayarCitibankPay($number);
-	function postPascabayarAmericaExpress($number);
-	function postPascabayarBni($number);
-	function postPascabayarUob($number);
-	function postPascabayarAnz($number);
-	function postPascabayarPermata($number);
-	function postPascabayarDanamon($number);
-	function postPascabayarPanin($number);
-	function postPascabayarBukopin($number);
-	function postPascabayarBumiputra($number);
-	function postPascabayarCitibank($number);
-	function postPascabayarDigibank($number);
-	function postPrabayarEmoney($number);
-	function postPrabayarEcash($number);
-	function postPrabayarOvo($number);
-	function postPrabayarGopay($number);
-	function postPrabayarDana($number);
-	function postPrabayarMtix($number);
-	function postPrabayarTixid($number);
-	function postPrabayarTcash($number);
-	function postPrabayarTapcash($number);
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarPgn($number);
+		$data['vendor'] = $this->labels['pgn'];
+
+		return $data;
+	}
+
+	function getPascabayarTelkom($number)
+	{
+		$vendor = config('bridger.telkom');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarTelkom($number);
+		$data['vendor'] = $this->labels['telkom'];
+
+		return $data;
+	}
+
+	function getPascabayarIndihome($number)
+	{
+		$vendor = config('bridger.indihome');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarIndihome($number);
+		$data['vendor'] = $this->labels['indihome'];
+
+		return $data;
+	}
+
+	function getPascabayarSpeedy($number)
+	{
+		$vendor = config('bridger.speedy');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarSpeedy($number);
+		$data['vendor'] = $this->labels['speedy'];
+
+		return $data;
+	}
+
+	function getPascabayarFirstmedia($number)
+	{
+		$vendor = config('bridger.firstmedia');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarFirstmedia($number);
+		$data['vendor'] = $this->labels['firstmedia'];
+
+		return $data;
+	}
+
+	function getPascabayarOkevision($number)
+	{
+		$vendor = config('bridger.okevision');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarOkevision($number);
+		$data['vendor'] = $this->labels['okevision'];
+
+		return $data;
+	}
+
+	function getPascabayarCbn($number)
+	{
+		$vendor = config('bridger.cbn');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarCbn($number);
+		$data['vendor'] = $this->labels['cbn'];
+
+		return $data;
+	}
+
+	function getPascabayarCentrinet($number)
+	{
+		$vendor = config('bridger.centrinnet');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarCentrinnet($number);
+		$data['vendor'] = $this->labels['centrinnet'];
+
+		return $data;
+	}
+
+	function getPrabayarWifiid();
+	{
+		$vendor = config('bridger.wifiid');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarWifiid($number);
+		$data['vendor'] = $this->labels['wifiid'];
+
+		return $data;
+	}
+
+	function getPrabayarMobileLegends()
+	{
+		$vendor = config('bridger.mobilelegends');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarMobilelegends($number);
+		$data['vendor'] = $this->labels['mobilelegends'];
+
+		return $data;
+	}
+
+	function getPrabayarMegaxus()
+	{
+		$vendor = config('bridger.megaxus');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarMegaxus($number);
+		$data['vendor'] = $this->labels['megaxus'];
+
+		return $data;
+	}
+
+	function getPrabayarLyto()
+	{
+		$vendor = config('bridger.lyto');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarLyto($number);
+		$data['vendor'] = $this->labels['lyto'];
+
+		return $data;
+	}
+
+	function getPrabayarItunes()
+	{
+		$vendor = config('bridger.itunes');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarItunes($number);
+		$data['vendor'] = $this->labels['itunes'];
+
+		return $data;
+	}
+
+	function getPrabayarGooglePlay()
+	{
+		$vendor = config('bridger.googleplay');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarGoogleplay($number);
+		$data['vendor'] = $this->labels['googleplay'];
+
+		return $data;
+	}
+
+	function getPrabayarGemsCool()
+	{
+		$vendor = config('bridger.gemscool');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarGemscool($number);
+		$data['vendor'] = $this->labels['gemscool'];
+
+		return $data;
+	}
+
+	function getPrabayarGarena()
+	{
+		$vendor = config('bridger.garena');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarGarena($number);
+		$data['vendor'] = $this->labels['garena'];
+
+		return $data;
+	}
+
+	function getPascabayarWom($number)
+	{
+		$vendor = config('bridger.wom');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarWom($number);
+		$data['vendor'] = $this->labels['wom'];
+
+		return $data;
+	}
+
+	function getPascabayarBussan($number)
+	{
+		$vendor = config('bridger.baf');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarBussan($number);
+		$data['vendor'] = $this->labels['baf'];
+
+		return $data;
+	}
+
+	function getPascabayarMegaAuto($number)
+	{
+		$vendor = config('bridger.maf');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarMegaAuto($number);
+		$data['vendor'] = $this->labels['maf'];
+
+		return $data;
+	}
+
+	function getPascabayarMegaCentral($number)
+	{
+		$vendor = config('bridger.mcf');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarMegaCentral($number);
+		$data['vendor'] = $this->labels['mcf'];
+
+		return $data;
+	}
+
+	function getPascabayarColumbia($number)
+	{
+		$vendor = config('bridger.clmb');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarColumbia($number);
+		$data['vendor'] = $this->labels['clmb'];
+
+		return $data;
+	}
+
+	function getPascabayarWoka($number)
+	{
+		$vendor = config('bridger.woka');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarWoka($number);
+		$data['vendor'] = $this->labels['woka'];
+
+		return $data;
+	}
+
+	function getPascabayarSmart($number)
+	{
+		$vendor = config('bridger.smart');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarSmart($number);
+		$data['vendor'] = $this->labels['smart'];
+
+		return $data;
+	}
+
+	function getPascabayarAdira($number)
+	{
+		$vendor = config('bridger.adira');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarAdira($number);
+		$data['vendor'] = $this->labels['adira'];
+
+		return $data;
+	}
+
+	function getPascabayarFif($number)
+	{
+		$vendor = config('bridger.fif');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarFif($number);
+		$data['vendor'] = $this->labels['fif'];
+
+		return $data;
+	}
+
+	function getPascabayarAnzFinance($number)
+	{
+		$vendor = config('bridger.anzpl');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarAnzFinance($number);
+		$data['vendor'] = $this->labels['anzpl'];
+
+		return $data;
+	}
+
+	function getPascabayarKtaPermata($number)
+	{
+		$vendor = config('bridger.ktapermata');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarKtaPermata($number);
+		$data['vendor'] = $this->labels['ktapermata'];
+
+		return $data;
+	}
+
+	function getPascabayarCitibankCash($number)
+	{
+		$vendor = config('bridger.citibankcash');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarCitibankCash($number);
+		$data['vendor'] = $this->labels['citibankcash'];
+
+		return $data;
+	}
+
+	function getPascabayarCitibankPay($number)
+	{
+		$vendor = config('bridger.citibankpay');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarCitibankPay($number);
+		$data['vendor'] = $this->labels['citibankpay'];
+
+		return $data;
+	}
+
+	function getPascabayarAmericanExpress($number)
+	{
+		$vendor = config('bridger.americanexp');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarAmericanExpress($number);
+		$data['vendor'] = $this->labels['americanexp'];
+
+		return $data;
+	}
+
+	function getPascabayarBni($number)
+	{
+		$vendor = config('bridger.bni');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarBni($number);
+		$data['vendor'] = $this->labels['bni'];
+
+		return $data;
+	}
+
+	function getPascabayarUob($number)
+	{
+		$vendor = config('bridger.uob');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarUob($number);
+		$data['vendor'] = $this->labels['uob'];
+
+		return $data;
+	}
+
+	function getPascabayarAnz($number)
+	{
+		$vendor = config('bridger.anz');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarAnz($number);
+		$data['vendor'] = $this->labels['anz'];
+
+		return $data;
+	}
+
+	function getPascabayarPermata($number)
+	{
+		$vendor = config('bridger.permata');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarPermata($number);
+		$data['vendor'] = $this->labels['permata'];
+
+		return $data;
+	}
+
+	function getPascabayarDanamon($number)
+	{
+		$vendor = config('bridger.danamon');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarDanamon($number);
+		$data['vendor'] = $this->labels['danamon'];
+
+		return $data;
+	}
+
+	function getPascabayarPanin($number)
+	{
+		$vendor = config('bridger.panin');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarPanin($number);
+		$data['vendor'] = $this->labels['panin'];
+
+		return $data;
+	}
+
+	function getPascabayarBukopin($number)
+	{
+		$vendor = config('bridger.bukopin');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarBukopin($number);
+		$data['vendor'] = $this->labels['bukopin'];
+
+		return $data;
+	}
+
+	function getPascabayarBumiputra($number)
+	{
+		$vendor = config('bridger.bumiputra');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarBumiputra($number);
+		$data['vendor'] = $this->labels['bumiputra'];
+
+		return $data;
+	}
+
+	function getPascabayarCitibank($number)
+	{
+		$vendor = config('bridger.citibank');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarCitibank($number);
+		$data['vendor'] = $this->labels['citibank'];
+
+		return $data;
+	}
+
+	function getPascabayarDigibank($number)
+	{
+		$vendor = config('bridger.digibank');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPascabayarDigibank($number);
+		$data['vendor'] = $this->labels['digibank'];
+
+		return $data;
+	}
+
+	function getPrabayarEmoney()
+	{
+		$vendor = config('bridger.emoney');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarEmoney(=);
+		$data['vendor'] = $this->labels['emoney'];
+
+		return $data;
+	}
+
+	function getPrabayarEcash()
+	{
+		$vendor = config('bridger.ecash');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarEmoney();
+		$data['vendor'] = $this->labels['ecash'];
+
+		return $data;
+	}
+
+	function getPrabayarOvo()
+	{
+		$vendor = config('bridger.ovo');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarOvo();
+		$data['vendor'] = $this->labels['ovo'];
+
+		return $data;
+	}
+
+	function getPrabayarGopay()
+	{
+		$vendor = config('bridger.gopay');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarGopay();
+		$data['vendor'] = $this->labels['gopay'];
+
+		return $data;
+	}
+
+	function getPrabayarDana()
+	{
+		$vendor = config('bridger.dana');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarDana();
+		$data['vendor'] = $this->labels['dana'];
+
+		return $data;
+	}
+
+	function getPrabayarMtix()
+	{
+		$vendor = config('bridger.mtix');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarMtix();
+		$data['vendor'] = $this->labels['mtix'];
+
+		return $data;
+	}
+
+	function getPrabayarTixid()
+	{
+		$vendor = config('bridger.tixid');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarTixid();
+		$data['vendor'] = $this->labels['tixid'];
+
+		return $data;
+	}
+
+	function getPrabayarTcash()
+	{
+		$vendor = config('bridger.tcash');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarTcash();
+		$data['vendor'] = $this->labels['tcash'];
+
+		return $data;
+	}
+
+	function getPrabayarTapcash()
+	{
+		$vendor = config('bridger.tapcash');
+
+		$data = [];
+		$data['output'] = $this->{$vendor}->getPrabayarTapCash();
+		$data['vendor'] = $this->labels['tapcash'];
+
+		return $data;
+	}
+
+	function postPrabayarPulsa($params = []);
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarData($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPascabayarPulsa($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPrabayarPln($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarPln($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarPgn($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarTelkom($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarIndihome($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarSpeedy($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarFirstmedia($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarOkevision($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarCbn($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarCentrinet($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPrabayarWifiid($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarMobileLegends($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarMegaxus($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarLyto($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarItunes($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarGooglePlay($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarGemsCool($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarGarena($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPascabayarWom($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarBussan($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarMegaAuto($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarMegaCentral($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarColumbia($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarWoka($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarSmart($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarAdira($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarFif($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarAnzFinance($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarKtaPermata($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarCitibankCash($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarCitibankPay($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarAmericaExpress($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarBni($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarUob($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarAnz($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarPermata($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarDanamon($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarPanin($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarBukopin($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarBumiputra($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarCitibank($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPascabayarDigibank($params = [])
+	{
+		return $this->bayarPascabayar($params);
+	}
+
+	function postPrabayarEmoney($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarEcash($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarOvo($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarGopay($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarDana($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarMtix($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarTixid($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarTcash($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
+
+	function postPrabayarTapcash($params = [])
+	{
+		return $this->bayarPrabayar($params);
+	}
 }

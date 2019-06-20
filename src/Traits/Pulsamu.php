@@ -57,7 +57,7 @@ trait Pulsamu
 
 	public $centrinnet		= 'CENTRINNET';
 	public $indihome		= 'INDIHOME',
-	public $speedy			= '',
+	public $speedy			= 'SPEEDY',
 	public $firstmedia		= 'FIRSTMEDIA',
 	public $okevision		= 'OKEVISION',
 	public $cbn				= 'CBN';
@@ -113,7 +113,7 @@ trait Pulsamu
 	public $smart			= 'FNSMF';
 	public $adira			= 'FNADIRAH';
 	public $fif				= 'FIF';
-	public $anzpl				= 'ANZPL';
+	public $anzpl			= 'ANZPL';
 	public $ktapermata		= 'KTAPERMATA';
 	public $citibankcash	= 'CITIBANKREADYCASH';
 	public $citibankpay		= 'CITIBANKEASYPAY';

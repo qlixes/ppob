@@ -52,7 +52,7 @@ interface IServices
 	function getPascabayarCitibankCash($number);
 	function getPascabayarCitibankPay($number);
 	
-	function getPascabayarAmericaExpress($number);
+	function getPascabayarAmericanExpress($number);
 	function getPascabayarBni($number);
 	function getPascabayarUob($number);
 	function getPascabayarAnz($number);
@@ -64,13 +64,13 @@ interface IServices
 	function getPascabayarCitibank($number);
 	function getPascabayarDigibank($number);
 
-	function getPrabayarEmoney($number);
-	function getPrabayarEcash($number);
-	function getPrabayarOvo($number);
-	function getPrabayarGopay($number);
-	function getPrabayarDana($number);
-	function getPrabayarMtix($number);
-	function getPrabayarTixid($number);
-	function getPrabayarTcash($number);
-	function getPrabayarTapcash($number);
+	function getPrabayarEmoney();
+	function getPrabayarEcash();
+	function getPrabayarOvo();
+	function getPrabayarGopay();
+	function getPrabayarDana();
+	function getPrabayarMtix();
+	function getPrabayarTixid();
+	function getPrabayarTcash();
+	function getPrabayarTapcash();
 }

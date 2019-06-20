@@ -332,7 +332,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPascabayar($params);
 	}
 	
-	function getPascabayarAmericaExpress($number)
+	function getPascabayarAmericanExpress($number)
 	{
 		$params = [];
 		$params['code'] = 'americanexp';
@@ -431,7 +431,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPascabayar($params);
 	}
 
-	function getPrabayarEmoney($number)
+	function getPrabayarEmoney()
 	{
 		$params = [];
 		$params['items'] = 'emoney';
@@ -439,7 +439,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPrabayar($params);
 	}
 
-	function getPrabayarEcash($number)
+	function getPrabayarEcash()
 	{
 		$params = [];
 		$params['items'] = 'ecash';
@@ -447,7 +447,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPrabayar($params);
 	}
 
-	function getPrabayarOvo($number)
+	function getPrabayarOvo()
 	{
 		$params = [];
 		$params['items'] = 'ovo';
@@ -455,7 +455,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPrabayar($params);
 	}
 
-	function getPrabayarGopay($number)
+	function getPrabayarGopay()
 	{
 		$params = [];
 		$params['items'] = 'gopay';
@@ -463,7 +463,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPrabayar($params);
 	}
 
-	function getPrabayarDana($number)
+	function getPrabayarDana()
 	{
 		$params = [];
 		$params['items'] = 'dana';
@@ -471,7 +471,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPrabayar($params);
 	}
 
-	function getPrabayarMtix($number)
+	function getPrabayarMtix()
 	{
 		$params = [];
 		$params['items'] = 'mtix';
@@ -479,7 +479,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPrabayar($params);
 	}
 
-	function getPrabayarTixid($number)
+	function getPrabayarTixid()
 	{
 		$params = [];
 		$params['items'] = 'tixid';
@@ -487,7 +487,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPrabayar($params);
 	}
 
-	function getPrabayarTcash($number)
+	function getPrabayarTcash()
 	{
 		$params = [];
 		$params['items'] = 'tcash';
@@ -495,7 +495,7 @@ class Pulsamu extends BasePulsa implements IServices
 		return $this->requestPrabayar($params);
 	}
 
-	function getPrabayarTapcash($number)
+	function getPrabayarTapcash()
 	{
 		$params = [];
 		$params['items'] = 'tapcash';
